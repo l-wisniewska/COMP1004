@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe Organiser</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Recipe Organiser</h1>
+	<form id="recipe-form">
+		<div class="form-group">
+			<label for="recipe-name">Name:</label>
+			<input type="text" id="recipe-name" name="recipe-name" required>
+		</div>
+		<br>
+		<fieldset>
+			<div class="form-group">
+				<label for="recipe-ingredients">Ingredients:</label>
+			</div>
+			<table id="ingredients-table">
+				<thead>
+					<tr>
+						<th>Action</th>
+						<th>Ingredient</th>
+                        <th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+                        <td><button type="button" class="btn btn-danger delete-ingredient">Delete</td>
+						<td><input type="text" class="ingredient-name" required></td>
+						<td><input type="text" class="ingredient-amount" required></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="button" id="add-ingredient">Add Ingredient</button>
+		</fieldset>
+		<br>
+		<div class="form-group">
+			<label for="recipe-method">Method:</label>
+			<textarea id="recipe-method" name="recipe-method" rows="5" required></textarea>
+		</div>
+		<br>
+		<button type="submit" class="btn btn-primary"> Add Recipe </button>
+	</form>
+	<div id="recipe-list">
+		<h2>Recipe List</h2>
+		<ul id="recipe-items"></ul>
+        <button type="button" id="download-recipes" class="btn btn-success">Download Recipes as JSON</button>
+	</div>
+    <footer>Upload your own recipe here!
+        <input type="file" id="upload-recipes" accept=".json">
+        <button type="button" id="load-recipes" class="btn btn-primary">upload</button>
+    </footer>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
